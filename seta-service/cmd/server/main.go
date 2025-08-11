@@ -19,6 +19,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("could not connect to database: %v", err)
 	}
+	// add defer to close the database connection
 
 	// Set up the router
 	router := routes.SetupRouter(db, log)

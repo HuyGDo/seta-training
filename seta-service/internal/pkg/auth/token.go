@@ -23,7 +23,7 @@ func GenerateToken(user *models.User) (string, error) {
 		secret = "default-secret-key" // Fallback for local development
 	}
 
-	expirationTime := time.Now().Add(72 * time.Hour)
+	expirationTime := time.Now().Add(72 * time.Hour) // should use configurable value
 	claims := &Claims{
 		UserID: user.ID.String(),
 		Role:   user.Role,
