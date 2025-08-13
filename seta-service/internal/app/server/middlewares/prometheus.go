@@ -29,6 +29,7 @@ var (
 )
 
 // PrometheusMiddleware creates a gin middleware for Prometheus metrics.
+// good
 func PrometheusMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		start := time.Now()

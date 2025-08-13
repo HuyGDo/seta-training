@@ -86,6 +86,7 @@ func (tc *TeamController) AddMember(c *gin.Context) {
 	}
 
 	var team models.Team
+	// should pass context when query
 	if err := tc.db.First(&team, uint(teamID)).Error; err != nil {
 		_ = c.Error(&middlewares.CustomError{Code: http.StatusNotFound, Message: "Team not found"})
 		return

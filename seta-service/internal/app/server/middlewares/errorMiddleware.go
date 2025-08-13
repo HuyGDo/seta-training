@@ -8,6 +8,7 @@ import (
 )
 
 // CustomError represents a custom error structure.
+// good but should place in a common package, not in middlewares
 type CustomError struct {
 	Code    int    `json:"code"`
 	Message string `json:"message"`

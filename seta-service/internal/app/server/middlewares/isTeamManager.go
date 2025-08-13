@@ -32,6 +32,7 @@ func IsTeamManager(db *gorm.DB) gin.HandlerFunc {
 
 		var team models.Team
 		if err := db.Preload("Managers").First(&team, "id = ?", teamID).Error; err != nil {
+			// use custom error
 			c.AbortWithStatusJSON(http.StatusNotFound, gin.H{"error": "Team not found"})
 			return
 		}
